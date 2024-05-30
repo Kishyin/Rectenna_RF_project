@@ -1,0 +1,21 @@
+close all
+clear
+clc
+
+mppt20dbm = load('20dbm.txt');
+mppt10dbm = load('10dbm.txt');
+mppt0dbm = load('0dbm.txt');
+
+load20dbm = mppt20dbm(:,1);
+power20dbm = mppt20dbm(:,2);
+voltage20dbm = mppt20dbm(:,3);
+current20dbm = mppt20dbm(:,4);
+
+
+figure;
+grid on;
+yyaxis left;
+plot(current20dbm, voltage20dbm);
+yyaxis right;
+plot(current20dbm, power20dbm);
+hold off;
